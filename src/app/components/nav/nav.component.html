@@ -1,0 +1,11 @@
+<nav class="sidebar">
+  <div class="app-name">
+    Jibi
+  </div>
+  <ul class="menu-items">
+    <li *ngIf = "isAdmin"><a routerLink="/admin/home" class="sidebar-link"><i class="fas fa-tachometer-alt"></i> Home</a></li>
+    <li *ngIf = "isAdmin"><a routerLink="/admin/agents" class="sidebar-link"><i class="fas fa-tachometer-alt"></i> Agents</a></li>
+    <li *ngIf = "isAuthenticated"><a  routerLink="/logout" (click)="logout()" class="sidebar-link"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+  </ul>
+
+</nav>

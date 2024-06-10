@@ -1,0 +1,43 @@
+<div class="container">
+  <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+  <h2>Update Agent</h2>
+  <form (ngSubmit)="updateProfile()">
+    <div class="form-group">
+      <label for="firstName">Prénom:</label>
+      <input type="text" id="firstName" name="fname" [(ngModel)]="profileInfo.fname">
+    </div>
+    <div class="form-group">
+      <label for="lastName">Nom:</label>
+      <input type="text" id="lastName" name="lname" [(ngModel)]="profileInfo.lname">
+    </div>
+    <div class="form-group">
+      <label for="cin">N° pièce d'identité:</label>
+      <input type="text" id="cin" name="cin" [(ngModel)]="profileInfo.cin">
+    </div>
+    <div class="form-group">
+      <label for="date">Date de naissance:</label>
+      <input type="text" id="date" name="date" [(ngModel)]="profileInfo.date">
+    </div>
+    <div class="form-group">
+      <label for="address">Adresse:</label>
+      <input type="text" id="address" name="address" [(ngModel)]="profileInfo.address">
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="email" [(ngModel)]="profileInfo.email">
+    </div>
+    <div class="form-group">
+      <label for="tel">Numéro de téléphone:</label>
+      <input type="text" id="tel" name="tel" [(ngModel)]="profileInfo.tel">
+    </div>
+    <div class="form-group">
+      <label for="numImmatriculation">N° d'immatriculation au registre de commerce:</label>
+      <input type="text" id="numImmatriculation" name="numImmatriculation" [(ngModel)]="profileInfo.numImmatriculation">
+    </div>
+    <div class="form-group">
+      <label for="numPatente">N° de patente:</label>
+      <input type="text" id="numPatente" name="numPatente" [(ngModel)]="profileInfo.numPatente">
+    </div>
+    <button type="submit">Modifier le profil</button>
+  </form>
+</div>

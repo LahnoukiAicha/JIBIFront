@@ -1,0 +1,52 @@
+<form (ngSubmit)="handleSubmit()">
+  <div>
+    <label for="firstName">Prénom *</label>
+    <input id="firstName" [(ngModel)]="formData.fname" name="firstName" required>
+  </div>
+  <div>
+    <label for="lastName">Nom *</label>
+    <input id="lastName" [(ngModel)]="formData.lname" name="lastName" required>
+  </div>
+  <div>
+    <label for="identityType">Pièce d'identité *</label>
+    <select id="identityType"  name="identityType" required>
+      <option value="C_I_N">C.I.N</option>
+    </select>
+  </div>
+  <div>
+    <label for="cin">N° pièce d'identité *</label>
+    <input id="cin" [(ngModel)]="formData.cin" name="cin" required>
+  </div>
+  <div>
+    <label for="date">Date de naissance</label>
+    <input id="date" type="date" [(ngModel)]="formData.date" name="date">
+  </div>
+  <div>
+    <label for="address">Adresse *</label>
+    <input id="address" [(ngModel)]="formData.address" name="address" required>
+  </div>
+  <div>
+    <label for="email">Email *</label>
+    <input id="email" type="email" [(ngModel)]="formData.email" name="email" required>
+  </div>
+  <div>
+    <label for="confirmEmail">Confirmation Email *</label>
+    <input id="confirmEmail" type="email" [(ngModel)]="formData.confirmEmail" name="confirmEmail" required>
+  </div>
+  <div>
+    <label for="tel">Numéro de téléphone *</label>
+    <input id="tel" [(ngModel)]="formData.tel" name="tel" required>
+  </div>
+  <div>
+    <label for="numImmatriculation">N° d'immatriculation au registre de commerce *</label>
+    <input id="numImmatriculation" [(ngModel)]="formData.numImmatriculation" name="numImmatriculation" required>
+  </div>
+  <div>
+    <label for="numPatente">N° de patente *</label>
+    <input id="numPatente" [(ngModel)]="formData.numPatente" name="numPatente" required>
+  </div>
+  <div>
+    <button type="submit">Enregistrer</button>
+    <button type="button">Annuler</button>
+  </div>
+</form>

@@ -1,0 +1,43 @@
+<div *ngIf="profileInfo">
+  <h2>Profile Information</h2>
+  <div>
+    <label for="firstName">Prénom:</label>
+    <span id="firstName">{{ profileInfo.fname }}</span>
+  </div>
+  <div>
+    <label for="lastName">Nom:</label>
+    <span id="lastName">{{ profileInfo.lname }}</span>
+  </div>
+  <div>
+    <label for="cin">N° pièce d'identité:</label>
+    <span id="cin">{{ profileInfo.cin }}</span>
+  </div>
+  <div>
+    <label for="date">Date de naissance:</label>
+    <span id="date">{{ profileInfo.date }}</span>
+  </div>
+  <div>
+    <label for="address">Adresse:</label>
+    <span id="address">{{ profileInfo.address }}</span>
+  </div>
+  <div>
+    <label for="email">Email:</label>
+    <span id="email">{{ profileInfo.email }}</span>
+  </div>
+  <div>
+    <label for="tel">Numéro de téléphone:</label>
+    <span id="tel">{{ profileInfo.tel }}</span>
+  </div>
+  <div>
+    <label for="numImmatriculation">N° d'immatriculation au registre de commerce:</label>
+    <span id="numImmatriculation">{{ profileInfo.numImmatriculation }}</span>
+  </div>
+  <div>
+    <label for="numPatente">N° de patente:</label>
+    <span id="numPatente">{{ profileInfo.numPatente }}</span>
+  </div>
+</div>
+
+<div *ngIf="errorMessage" class="error-message">
+  {{ errorMessage }}
+</div>

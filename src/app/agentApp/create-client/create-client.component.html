@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ouverture d'un compte de paiement</title>
+  <!-- Ajout de Bootstrap pour le style -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .btn-orange {
+      background-color: orange;
+      border-color: orange;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h2 class="mt-4 mb-4">Ouverture d'un compte de paiement</h2>
+  <form (ngSubmit)="handleSubmit()" class="form-container">
+    <!-- Première ligne -->
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="lastName">Nom:</label>
+        <input [(ngModel)]="formData.lname" name="lastName" id="lastName" class="form-control" required>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="firstName">Prénom:</label>
+        <input [(ngModel)]="formData.fname" name="firstName" id="firstName" class="form-control" required>
+      </div>
+    </div>
+    <!-- Deuxième ligne -->
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="phoneNumber">Téléphone:</label>
+        <input [(ngModel)]="formData.tel" name="phoneNumber" id="phoneNumber" class="form-control" required>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="email">Email:</label>
+        <input [(ngModel)]="formData.email" name="email" id="email" type="email" class="form-control" required>
+      </div>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="confirmEmail">Confirmation Email *</label>
+      <input id="confirmEmail" type="email" [(ngModel)]="formData.confirmEmail" name="confirmEmail" required>
+    </div>
+      <!-- Troisième ligne -->
+      <div class="form-row">
+        <div>
+          <label for="identityType">Pièce d'identité *</label>
+          <select id="identityType" name="identityType" required>
+            <option value="C_I_N">C.I.N</option>
+          </select>
+        </div>
+        <div>
+          <div class="form-group col-md-6">
+            <label for="cin">CIN:</label>
+            <input [(ngModel)]="formData.cin" name="cin" id="cin" class="form-control" required>
+          </div>
+        </div>
+          <div class="form-group col-md-6">
+            <label for="address">Adresse:</label>
+            <input [(ngModel)]="formData.address" name="address" id="address" class="form-control" required>
+          </div>
+        </div>
+        <!-- Quatrième ligne -->
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="initialBalance">Solde initial:</label>
+            <select [(ngModel)]="formData.initialBalance" name="initialBalance" id="initialBalance" class="form-control"
+                    required>
+              <option value="200">Compte 200</option>
+              <option value="5000">Compte 5 000</option>
+              <option value="20000">Compte 20 000</option>
+            </select>
+          </div>
+        </div>
+        <!-- Bouton de soumission -->
+        <div class="form-row mt-4">
+          <div class="form-group col-md-12">
+            <button type="submit" class="btn btn-orange">Créer un compte</button>
+          </div>
+        </div>
+  </form>
+</div>
+</body>
+</html>

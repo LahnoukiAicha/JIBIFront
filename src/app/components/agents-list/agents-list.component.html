@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liste des Agents</title>
+</head>
+<body>
+<div class="card">
+  <button routerLink="/admin/register" >ADD Agent</button>
+  <div class="card-header bg-primary text-white">
+    <h2>Liste des Agents</h2>
+  </div>
+  <div class="card-body">
+    <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+    <div class="table-responsive">
+      <table class="table table-hover table-striped">
+        <thead class="thead-dark">
+        <tr>
+          <th>Prénom</th>
+          <th>Nom</th>
+          <th>Email</th>
+          <th>Adresse</th>
+          <th>Téléphone</th>
+          <th>N° pièce d'identité</th>
+          <th>Date de naissance</th>
+          <th>N° d'immatriculation</th>
+          <th>N° de patente</th>
+          <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let agent of agents">
+          <td *ngIf="!agent.editMode">{{ agent.fname }}</td>
+          <td *ngIf="agent.editMode"><input [(ngModel)]="agent.fname" /></td>
+
+          <td *ngIf="!agent.editMode">{{ agent.lname }}</td>
+          <td *ngIf="agent.editMode"><input [(ngModel)]="agent.lname" /></td>
+
+          <td *ngIf="!agent.editMode">{{ agent.email }}</td>
+          <td *ngIf="agent.editMode"><input [(ngModel)]="agent.email" /></td>
+
+          <td *ngIf="!agent.editMode">{{ agent.address }}</td>
+          <td *ngIf="agent.editMode"><input [(ngModel)]="agent.address" /></td>
+
+          <td *ngIf="!agent.editMode">{{ agent.tel }}</td>
+          <td *ngIf="agent.editMode"><input [(ngModel)]="agent.tel" /></td>
+
+          <td *ngIf="!agent.editMode">{{ agent.cin }}</td>
+          <td *ngIf="agent.editMode"><input [(ngModel)]="agent.cin" /></td>
+
+          <td *ngIf="!agent.editMode">{{ agent.date }}</td>
+          <td *ngIf="agent.editMode"><input [(ngModel)]="agent.date" /></td>
+
+          <td *ngIf="!agent.editMode">{{ agent.numImmatriculation }}</td>
+          <td *ngIf="agent.editMode"><input [(ngModel)]="agent.numImmatriculation" /></td>
+
+          <td *ngIf="!agent.editMode">{{ agent.numPatente }}</td>
+          <td *ngIf="agent.editMode"><input [(ngModel)]="agent.numPatente" /></td>
+
+          <td>
+            <button class="btn btn-primary btn-sm" *ngIf="!agent.editMode" (click)="editAgent(agent)">Modifier</button>
+            <button class="btn btn-success btn-sm" *ngIf="agent.editMode" (click)="saveAgent(agent)">Save</button>
+            <button class="btn btn-danger btn-sm" (click)="deleteUser(agent.id)">Supprimer</button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</body>
+</html>

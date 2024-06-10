@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page d'accueil de l'agent</title>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-brand">Agent Dashboard</div>
+  <div class="navbar-buttons">
+    <button *ngIf = "isAuthenticated" class="navbar-button" routerLink="/agent/clients" >Liste des Clients</button>
+    <button *ngIf = "isAuthenticated" class="navbar-button" routerLink="/agent/profil">Consulter Profil</button>
+    <button class="navbar-button" routerLink="/logout" (click)="logout()">Se Déconnecter</button>
+  </div>
+</nav>
+<div class="container">
+  <h2>Bienvenue, Agent !</h2>
+  <div class="button-container">
+    <button *ngIf = "isAuthenticated" class="action-button" routerLink="/agent/createClient">Créer un compte client</button>
+    <button class="action-button" >Créer un compte professionnel</button>
+  </div>
+  <router-outlet></router-outlet>
+</div>
+</body>
+</html>
